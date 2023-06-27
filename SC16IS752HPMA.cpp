@@ -770,7 +770,7 @@ void SC16IS752HPMA::startReadCOParticleMeasurement(uint8_t channel) {
   delay(100);
 }
 
-int[9] SC16IS752HPMA::readCOParticleMeasurement(uint8_t channel) {
+int* SC16IS752HPMA::readCOParticleMeasurement(uint8_t channel) {
   for(int count = 0; count < 9; count++) {
     _co_result[count] = ReadByte(channel);
   }
@@ -808,6 +808,6 @@ unsigned int SC16IS752HPMA::GetHPMAPM2_5(uint8_t channel) {
 unsigned int SC16IS752HPMA::GetHPMAPM10(uint8_t channel) {
   return _pm10;
 }
-uint8_t[9] SC16IS752HPMA::GetCOResult(uint8_t channel) {
+int* SC16IS752HPMA::GetCOResult(uint8_t channel) {
   return _co_result;
 }

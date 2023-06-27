@@ -182,8 +182,8 @@ public:
 
   void startCOParticleMeasurement(uint8_t channel);
   void startReadCOParticleMeasurement(uint8_t channel);
-  int[9] readtCOPartcileMeasurement(uint8_t channel);
-  int[9] GetCOResult(uint8_t channel);
+  int* readCOParticleMeasurement(uint8_t channel);
+  int* GetCOResult(uint8_t channel);
 
   //	void setTimeout(uint32_t);
   size_t readBytes(uint8_t channel, uint8_t *buffer, size_t length);
@@ -250,7 +250,7 @@ private:
   
   void SendHPMACommand(uint8_t channel, unsigned char * cmdBuf, unsigned int cmdSize);
   void readUntilUnavailable(uint8_t channel);
-  void unsigned char COCheckSum(unsigned char* i, unsigned char ln);
+  unsigned char COCheckSum(unsigned char* i, unsigned char ln);
 
   unsigned int _pm2_5;
   unsigned int _pm10;
